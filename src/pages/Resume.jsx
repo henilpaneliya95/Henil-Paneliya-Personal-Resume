@@ -242,7 +242,7 @@ export default function Resume() {
         </motion.div>
 
         {/* Download Button */}
-        <motion.a
+        {/* <motion.a
           href="/resume.pdf"
           download
           whileHover={{ scale: 1.05 }}
@@ -260,7 +260,7 @@ export default function Resume() {
           }}
         >
           ⬇️ Download Resume
-        </motion.a>
+        </motion.a> */}
 
 
       </motion.div>

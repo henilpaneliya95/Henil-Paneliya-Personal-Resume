@@ -3,18 +3,32 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "../CSS/Gallery.css";
 
+// Import gallery images
+import matheran from "../../public/gallery/matheran.jpg";
+import matheran2 from "../../public/gallery/matheran2.jpg";
+import lonawala from "../../public/gallery/lonawala.jpg";
+import lonawala2 from "../../public/gallery/lonawala2.jpg";
+import mImg from "../../public/gallery/m.png";
+import m2 from "../../public/gallery/m2.jpeg";
+import profilex from "../../public/gallery/profilex.jpeg";
+import profilex2 from "../../public/gallery/profilex2.jpeg";
+import profilex3 from "../../public/gallery/profilex3.jpeg";
+import profilex4 from "../../public/gallery/profilex4.jpeg";
+import leet from "../../public/gallery/leet.jpeg";
+import techlead from "../../public/gallery/techlead.png";
+
 const IMAGES = {
   personal: [
     {
       id: 1,
       caption: "Lost in the beauty of the misty forest 🌲🌫️",
-      photos: ["/gallery/matheran.jpg", "/gallery/matheran2.jpg"],
+      photos: [matheran, matheran2],
     },
     {
       id: 2,
       caption:
-        "Weekend getaway to clear my head 🌄 Sometimes inspiration strikes when you’re away from the screen.",
-      photos: ["/gallery/lonawala.jpg", "/gallery/lonawala2.jpg"],
+        "Weekend getaway to clear my head 🌄 Sometimes inspiration strikes when you're away from the screen.",
+      photos: [lonawala, lonawala2],
     },
   ],
   projects: [
@@ -22,26 +36,26 @@ const IMAGES = {
       id: 1,
       caption:
         "It’s an AI-powered tool that understands what someone might be feeling based on their words.",
-      photos: ["/gallery/m.png", "/gallery/m2.jpeg"],
+      photos: [mImg, m2],
     },
     
     {
       id: 1,
       caption:
         "📂ProfileX - Smart Data Profiler + Preprocessor",
-      photos: ["/gallery/profilex.jpeg", "/gallery/profilex2.jpeg","/gallery/profilex3.jpeg", "/gallery/profilex4.jpeg"],
+      photos: [profilex, profilex2, profilex3, profilex4],
     },
   ],
   achievements: [
     {
       id: 1,
       caption: "Solved 1000 LeetCode questions 🏆!",
-      photos: ["/gallery/leet.jpeg"],
+      photos: [leet],
     },
     {
       id: 2,
       caption: "Technical Lead at SCET AI Club 🤖",
-      photos: ["/gallery/techlead.png"],
+      photos: [techlead],
     },
   ],
 };

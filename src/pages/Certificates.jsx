@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import certificate images
+import simplilearn from "../../public/certs/simplilearn.png";
+import csVision from "../../public/certs/cs-vision.png";
+import freecodecamp from "../../public/certs/freecodecamp.png";
+import cert1 from "../../public/certs/1.jpg";
+
 // ✅ Certificates data (added URLs for View button)
 const CERTS = {
   tech: [
@@ -8,22 +14,22 @@ const CERTS = {
       title: "Flipkart Hackathon",
       org: "Flipkart",
       date: "2022",
-      img: "/certs/simplilearn.png",
-      link: "/certs/simplilearn.png",
+      img: simplilearn,
+      link: simplilearn,
     },
     {
       title: "Solution Challenge",
       org: "Google Developers",
       date: "2023",
-      img: "/certs/cs-vision.png",
-      link: "/certs/cs-vision.png",
+      img: csVision,
+      link: csVision,
     },
     {
       title: "ADira",
       org: "SCET AI Club",
       date: "2025",
-      img: "/certs/freecodecamp.png",
-      link: "/certs/freecodecamp.png",
+      img: freecodecamp,
+      link: freecodecamp,
     },
   ],
   other: [
@@ -45,8 +51,8 @@ const CERTS = {
       title: "Dataloom",
       org: "SCET",
       date: "2024",
-      img: "/certs/1.jpg",
-      link: "/certs/1.jpg",
+      img: cert1,
+      link: cert1,
     },
   ],
 };

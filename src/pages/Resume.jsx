@@ -218,7 +218,7 @@ export default function Resume() {
         </motion.div>
 
         {/* PDF Viewer */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
@@ -239,7 +239,7 @@ export default function Resume() {
               background: "#111",
             }}
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* Download Button */}
         {/* <motion.a

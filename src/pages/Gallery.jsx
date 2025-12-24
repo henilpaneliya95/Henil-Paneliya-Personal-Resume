@@ -15,7 +15,6 @@ import profilex2 from "../../public/gallery/profilex2.jpeg";
 import profilex3 from "../../public/gallery/profilex3.jpeg";
 import profilex4 from "../../public/gallery/profilex4.jpeg";
 import leet from "../../public/gallery/leet.jpeg";
-import techlead from "../../public/gallery/techlead.png";
 
 const IMAGES = {
   personal: [
@@ -51,11 +50,6 @@ const IMAGES = {
       id: 1,
       caption: "Solved 1000 LeetCode questions 🏆!",
       photos: [leet],
-    },
-    {
-      id: 2,
-      caption: "Technical Lead at SCET AI Club 🤖",
-      photos: [techlead],
     },
   ],
 };

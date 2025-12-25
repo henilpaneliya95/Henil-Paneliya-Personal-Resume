@@ -34,8 +34,8 @@ export default function Contact() {
 
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     const isEmail = emailPattern.test(form.contact);
-    if (!isEmail && isNaN(form.contact)) {
-      setStatus("⚠️ Please enter a valid email or phone number.");
+    if (!isEmail) {
+      setStatus("⚠️ Please enter a valid email address.");
       return;
     }
 
@@ -46,22 +46,23 @@ export default function Contact() {
     formData.append("email", form.contact);
     formData.append("subject", form.subject);
     formData.append("message", form.message);
-    
     // Auto-response to sender (Thank you email)
     formData.append("_autoresponse", "Thank you for contacting me! I received your message and will get back to you soon. - Henil Paneliya");
-    
     // Customize email subject you receive
     formData.append("_subject", `New Contact from ${form.name} - ${form.subject}`);
-    
     // Disable default captcha
     formData.append("_captcha", "false");
-    
     // Custom template for email you receive
     formData.append("_template", "box");
+    // Reply-to header for direct replies
+    formData.append("_replyto", form.contact);
 
     try {
-      const response = await fetch("https://formsubmit.co/henilpaneliya101@gmail.com", {
+      const response = await fetch("https://formsubmit.co/henilpaneliya1001@gmail.com", {
         method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
         body: formData,
       });
 
@@ -142,7 +143,7 @@ export default function Contact() {
         className="contact-form"
       >
         <input type="text" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
-        <input type="text" name="contact" placeholder="Your Email or Phone" value={form.contact} onChange={handleChange} required />
+        <input type="email" name="contact" placeholder="Your Email" value={form.contact} onChange={handleChange} required />
         <input type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} required />
         <textarea name="message" placeholder="Your Message..." value={form.message} onChange={handleChange} rows="5" required />
         <motion.button type="submit" className="contact-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

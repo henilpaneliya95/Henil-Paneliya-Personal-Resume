@@ -42,24 +42,26 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("email", form.contact);
+      formData.append("subject", form.subject);
+      formData.append("message", form.message);
+      formData.append(
+        "_autoresponse",
+        "Thank you for contacting me! I received your message and will get back to you soon. - Henil Paneliya"
+      );
+      formData.append("_subject", `New Contact from ${form.name} - ${form.subject}`);
+      formData.append("_captcha", "false");
+      formData.append("_template", "box");
+      formData.append("_replyto", form.contact);
+
       const response = await fetch("https://formsubmit.co/ajax/henilpaneliya101@gmail.com", {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.contact,
-          subject: form.subject,
-          message: form.message,
-          _autoresponse:
-            "Thank you for contacting me! I received your message and will get back to you soon. - Henil Paneliya",
-          _subject: `New Contact from ${form.name} - ${form.subject}`,
-          _captcha: "false",
-          _template: "box",
-          _replyto: form.contact,
-        }),
+        body: formData,
       });
 
       if (response.ok) {

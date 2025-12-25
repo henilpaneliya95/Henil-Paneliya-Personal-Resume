@@ -58,7 +58,7 @@ export default function Contact() {
     formData.append("_replyto", form.contact);
 
     try {
-      const response = await fetch("https://formsubmit.co/henilpaneliya1001@gmail.com", {
+      const response = await fetch("https://formsubmit.co/henilpaneliya101@gmail.com", {
         method: "POST",
         headers: {
           Accept: "application/json",

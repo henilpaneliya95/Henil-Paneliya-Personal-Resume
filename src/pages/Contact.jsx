@@ -41,29 +41,25 @@ export default function Contact() {
 
     setStatus("Sending...");
 
-    const formData = new FormData();
-    formData.append("name", form.name);
-    formData.append("email", form.contact);
-    formData.append("subject", form.subject);
-    formData.append("message", form.message);
-    // Auto-response to sender (Thank you email)
-    formData.append("_autoresponse", "Thank you for contacting me! I received your message and will get back to you soon. - Henil Paneliya");
-    // Customize email subject you receive
-    formData.append("_subject", `New Contact from ${form.name} - ${form.subject}`);
-    // Disable default captcha
-    formData.append("_captcha", "false");
-    // Custom template for email you receive
-    formData.append("_template", "box");
-    // Reply-to header for direct replies
-    formData.append("_replyto", form.contact);
-
     try {
-      const response = await fetch("https://formsubmit.co/henilpaneliya101@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/henilpaneliya101@gmail.com", {
         method: "POST",
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify({
+          name: form.name,
+          email: form.contact,
+          subject: form.subject,
+          message: form.message,
+          _autoresponse:
+            "Thank you for contacting me! I received your message and will get back to you soon. - Henil Paneliya",
+          _subject: `New Contact from ${form.name} - ${form.subject}`,
+          _captcha: "false",
+          _template: "box",
+          _replyto: form.contact,
+        }),
       });
 
       if (response.ok) {
